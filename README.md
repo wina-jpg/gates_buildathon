@@ -78,17 +78,15 @@ If the API is slow or down, see [`data/sample_output.md`](data/sample_output.md)
 
 ## Deploy on Vercel
 
-This repo is set up for a **single Vercel project**: static React UI + Python serverless API.
+This repo is set up for a **single Vercel project**: static React UI + FastAPI on the same domain.
 
 1. Import [github.com/wina-jpg/gates_buildathon](https://github.com/wina-jpg/gates_buildathon) in the [Vercel dashboard](https://vercel.com/new).
-2. **Root directory:** leave as repo root (not `frontend/`).
+2. **Root directory:** repo root (`.`). Do **not** set it to `frontend/` — Vercel must see [`main.py`](main.py) at the project root.
 3. **Environment variables** (Project → Settings → Environment Variables):
    - `HF_API_KEY` (required)
    - Optional: `HF_MODEL`, `HF_PROVIDER`, `HF_MAX_TOKENS`, `MAX_CONTEXT_CHARS`
-4. Deploy. Vercel uses [`vercel.json`](vercel.json):
-   - Builds the UI from `frontend/` → `frontend/dist`
-   - Routes `/api/*` and `/health` to [`api/index.py`](api/index.py) (FastAPI via Mangum)
-5. Open your `*.vercel.app` URL — the UI calls `/api/chat` on the same domain (no CORS setup needed for previews).
+4. Deploy. [`vercel.json`](vercel.json) builds the UI to `frontend/dist`; Vercel auto-detects the FastAPI `app` in [`main.py`](main.py) (no `api/` folder needed).
+5. Open your `*.vercel.app` URL — the UI calls `/api/chat` on the same origin.
 
 **Local dev** is unchanged (two terminals: `uvicorn` + `npm run dev` with Vite proxy).
 
