@@ -4,6 +4,37 @@ export type AppPhase =
   | 'summary'
   | 'generating'
   | 'results'
+  | 'outlook'
+
+export interface CompetitorJd {
+  id: string
+  company: string
+  title: string
+  text: string
+  /** Demo synthetic resumes shown under "See potential candidates". */
+  potentialCandidates: string[]
+}
+
+export interface HiringOutlookData {
+  competitorsSubtitle: string
+  candidatePool: {
+    count: string
+    label: string
+    benchmark: string
+    summary: string
+  }
+  stars: {
+    subtitle: string
+    summary: string
+  }
+  timeToHire: {
+    range: string
+    label: string
+    benchmark: string
+    summary: string
+  }
+  competitors: CompetitorJd[]
+}
 
 export interface ChatMessage {
   role: 'user' | 'assistant'

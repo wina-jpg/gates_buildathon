@@ -1,11 +1,13 @@
 import { useState, useCallback } from 'react'
 import { sendChat } from './api'
 import { Chatbox } from './components/Chatbox'
+import { JobShockLogo } from './components/JobShockLogo'
 import { IntroScreen } from './screens/IntroScreen'
 import { ConversationScreen } from './screens/ConversationScreen'
 import { SummaryScreen } from './screens/SummaryScreen'
 import { GeneratingScreen } from './screens/GeneratingScreen'
 import { ResultsScreen } from './screens/ResultsScreen'
+import { HiringOutlookScreen } from './screens/HiringOutlookScreen'
 import { buildConversationSummary } from './utils/summary'
 import {
   buildFirstTurnReply,
@@ -197,7 +199,7 @@ function App() {
 
   const shellClass = [
     'app-shell',
-    phase === 'results' && 'app-shell-wide',
+    (phase === 'results' || phase === 'outlook') && 'app-shell-wide',
     phase === 'generating' && 'app-shell-shock',
   ]
     .filter(Boolean)
@@ -213,10 +215,11 @@ function App() {
           ? 'Ask for edits to the job description…'
           : 'Type your message…'
 
-  const showChatbox = phase !== 'generating'
+  const showChatbox = phase !== 'generating' && phase !== 'outlook'
 
   return (
     <div className={shellClass}>
+      <JobShockLogo />
       <main className="phase-main">
         {phase === 'intro' && <IntroScreen />}
         {phase === 'conversation' && (
@@ -240,7 +243,11 @@ function App() {
             evidenceSummary={evidenceSummary}
             onCopy={copyDraft}
             copied={copied}
+            onNext={() => setPhase('outlook')}
           />
+        )}
+        {phase === 'outlook' && (
+          <HiringOutlookScreen onBack={() => setPhase('results')} />
         )}
         {phase === 'summary' && error && (
           <p className="error-banner error-banner-center">{error}</p>

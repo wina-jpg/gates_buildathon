@@ -8,6 +8,7 @@ interface ResultsScreenProps {
   evidenceSummary: string | null
   onCopy: () => void
   copied: boolean
+  onNext: () => void
 }
 
 export function ResultsScreen({
@@ -15,6 +16,7 @@ export function ResultsScreen({
   evidenceSummary,
   onCopy,
   copied,
+  onNext,
 }: ResultsScreenProps) {
   const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null)
 
@@ -46,6 +48,11 @@ export function ResultsScreen({
         ) : (
           <pre className="job-draft">No draft yet.</pre>
         )}
+        <div className="results-footer">
+          <button type="button" className="btn-next" onClick={onNext}>
+            Next
+          </button>
+        </div>
       </div>
       <AnalysisSidebar
         analysis={MOCK_ANALYSIS}

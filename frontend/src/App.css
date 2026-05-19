@@ -25,6 +25,51 @@
   z-index: 1;
 }
 
+.app-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  padding: 0.85rem 1.25rem;
+  pointer-events: none;
+}
+
+.jobshock-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: auto;
+  background: transparent;
+}
+
+.jobshock-logo-bolt {
+  width: 1.85rem;
+  height: auto;
+  flex-shrink: 0;
+  color: #e6b83e;
+}
+
+.jobshock-logo-text {
+  display: flex;
+  align-items: baseline;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.jobshock-logo-word-job {
+  color: var(--text);
+}
+
+.jobshock-logo-word-shock {
+  color: #e6b83e;
+}
+
+.app-shell-shock .jobshock-logo-word-job {
+  color: #ffffff;
+}
+
 .app-shell-wide .phase-main {
   max-width: 1100px;
 }
@@ -34,7 +79,7 @@
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 6rem;
+  padding: 3.25rem 1.5rem 6rem;
   display: flex;
   flex-direction: column;
 }
@@ -765,9 +810,325 @@
   margin-top: 1rem;
 }
 
+/* Results footer / Next */
+.results-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.btn-next {
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.65rem 2rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.btn-next:hover {
+  background: var(--accent-dim);
+}
+
+/* Hiring outlook */
+.outlook-screen {
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.outlook-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.outlook-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.outlook-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.btn-flip-jd {
+  flex-shrink: 0;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: #e2e8f0;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-flip-jd:hover {
+  background: #cbd5e1;
+  color: var(--text);
+}
+
+.outlook-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.outlook-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.outlook-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  padding: 1rem 1.1rem;
+  background: var(--chat-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.metric-headline {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.metric-count {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.metric-count-green {
+  color: #16a34a;
+}
+
+.metric-count-time {
+  color: #d97706;
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+
+.metric-headline-stars {
+  font-size: 1.35rem;
+  color: #16a34a;
+}
+
+.metric-label-secondary {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.stars-accent {
+  color: #16a34a;
+}
+
+.metric-benchmark {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+.metric-summary-box {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  background: var(--bg-input);
+}
+
+.competitors-section {
+  margin-top: 0.5rem;
+}
+
+.competitors-heading {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.competitors-subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.competitor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.competitor-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.candidates-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--chat-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.candidates-toggle:hover {
+  background: var(--bg-input);
+}
+
+.candidates-chevron {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.candidates-panel {
+  padding: 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--bg-input);
+}
+
+.candidates-panel-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.candidates-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.competitor-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  padding: 1rem;
+  background: var(--chat-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.competitor-card-expanded {
+  min-height: auto;
+}
+
+.competitor-card-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.competitor-card-company {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.competitor-card-text {
+  flex: 1;
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.competitor-expand-btn {
+  align-self: flex-end;
+  font: inherit;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: var(--bg-input);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.competitor-expand-btn:hover {
+  background: var(--chat-bg);
+  color: var(--text);
+}
+
 @media (max-width: 768px) {
-  .results-screen {
+  .results-screen,
+  .outlook-screen {
     flex-direction: column;
+  }
+
+  .outlook-header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-flip-jd {
+    align-self: flex-end;
+  }
+
+  .outlook-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 520px) and (max-width: 768px) {
+    .outlook-metrics {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .competitor-grid {
+    grid-template-columns: 1fr;
   }
 
   .analysis-sidebar {
