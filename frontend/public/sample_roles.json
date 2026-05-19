@@ -1,0 +1,35 @@
+[
+  {
+    "id": "senior-engineer",
+    "label": "Senior Software Engineer (Platform)",
+    "job_title": "Senior Software Engineer",
+    "department": "Platform Engineering",
+    "seniority": "Senior",
+    "location": "Remote (US)",
+    "key_skills": ["Python", "Kubernetes", "AWS", "distributed systems"],
+    "company_context": "We build open tools for data teams. Benefits include flexible PTO, learning stipend, and inclusive parental leave.",
+    "tone": "professional"
+  },
+  {
+    "id": "marketing-manager",
+    "label": "Marketing Manager (Nonprofit)",
+    "job_title": "Marketing Manager",
+    "department": "Communications",
+    "seniority": "Mid",
+    "location": "Hybrid — New York, NY",
+    "key_skills": ["content strategy", "social media", "analytics", "storytelling"],
+    "company_context": "Mission-driven nonprofit expanding access to STEM education in underserved communities.",
+    "tone": "friendly"
+  },
+  {
+    "id": "product-designer",
+    "label": "Product Designer (Startup)",
+    "job_title": "Product Designer",
+    "department": "Product",
+    "seniority": "Mid",
+    "location": "San Francisco, CA (hybrid)",
+    "key_skills": ["Figma", "user research", "design systems", "prototyping"],
+    "company_context": "Early-stage B2B SaaS focused on hiring workflow automation. Fast-paced, collaborative team.",
+    "tone": "concise"
+  }
+]
