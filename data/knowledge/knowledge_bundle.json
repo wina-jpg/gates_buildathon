@@ -1,0 +1,139 @@
+{
+  "company_context": {
+    "name": "Acme Data Labs",
+    "mission": "Build reliable, secure data platforms that help enterprise customers make better decisions faster.",
+    "values": [
+      "inclusive hiring",
+      "evidence-based requirements",
+      "remote-first collaboration",
+      "sustainable engineering pace"
+    ],
+    "benefits": [
+      "US remote-first",
+      "flexible PTO",
+      "learning stipend",
+      "inclusive parental leave"
+    ],
+    "compliance_rules": [
+      "Ground requirements in internal project and profile evidence; cite sources like (project:atlas-migration).",
+      "Do not invent salaries, equity, or benefits not listed in company context.",
+      "Use inclusive language; avoid age-coded or biased terms.",
+      "Include the standard equal opportunity employer statement in full job postings unless the user opts out."
+    ],
+    "equal_opportunity_statement": "Acme Data Labs is an equal opportunity employer. We are committed to creating a diverse and inclusive workplace and do not discriminate on the basis of race, color, religion, sex, national origin, age, disability, veteran status, sexual orientation, gender identity, or any other characteristic protected by applicable law. All employment decisions are based solely on qualifications, merit, and business needs. We encourage candidates of all backgrounds to apply."
+  },
+  "competitor_jds": [
+    {
+      "id": "globex-platform",
+      "company": "Globex Analytics",
+      "title": "Staff Platform Engineer",
+      "text": "Hybrid 3 days/week in Austin. Own Kubernetes platform on GCP. 7+ years required. CS degree preferred. On-call rotation required."
+    },
+    {
+      "id": "initech-sre",
+      "company": "Initech Cloud",
+      "title": "Senior SRE",
+      "text": "On-site in NYC. Manage AWS EKS and Terraform at scale. Strong Python and Go. 24/7 pager duty. Competitive salary + bonus."
+    },
+    {
+      "id": "umbrella-data",
+      "company": "Umbrella Data Co",
+      "title": "Platform Engineer II",
+      "text": "Remote US. Build internal developer portal and CI/CD. Python, Docker, K8s. 4+ years. Emphasis on cost optimization and observability."
+    }
+  ],
+  "projects": [
+    {
+      "id": "atlas-migration",
+      "name": "Project Atlas - K8s Migration",
+      "summary": "Migrate legacy batch workloads from EC2 to EKS with GitOps (Argo CD) and Terraform.",
+      "skills": ["Python", "Kubernetes", "AWS EKS", "Terraform", "Argo CD"],
+      "team_size": 6,
+      "status": "active"
+    },
+    {
+      "id": "dev-portal",
+      "name": "Internal Developer Portal",
+      "summary": "Self-service templates and golden paths for new microservices and data pipelines.",
+      "skills": ["Python", "Backstage", "API design", "documentation"],
+      "team_size": 4,
+      "status": "active"
+    },
+    {
+      "id": "cost-optimization",
+      "name": "Cloud Cost Optimization",
+      "summary": "Right-size workloads and implement autoscaling policies across data plane services.",
+      "skills": ["FinOps", "Kubernetes", "monitoring", "Python"],
+      "team_size": 3,
+      "status": "planning"
+    },
+    {
+      "id": "data-pipeline-reliability",
+      "name": "Data Pipeline Reliability",
+      "summary": "Improve SLAs for customer-facing analytics pipelines with SLOs and incident playbooks.",
+      "skills": ["Python", "Airflow", "observability", "on-call"],
+      "team_size": 5,
+      "status": "active"
+    }
+  ],
+  "worker_profiles": [
+    {
+      "id": "profile-senior-platform",
+      "title": "Senior Platform Engineer",
+      "level": "L5",
+      "skills": ["Python", "Kubernetes", "Terraform", "mentoring"],
+      "typical_projects": ["atlas-migration", "dev-portal"]
+    },
+    {
+      "id": "profile-staff-sre",
+      "title": "Staff SRE",
+      "level": "L6",
+      "skills": ["incident response", "SLO design", "AWS", "Python"],
+      "typical_projects": ["data-pipeline-reliability", "atlas-migration"]
+    },
+    {
+      "id": "profile-backend",
+      "title": "Senior Backend Engineer",
+      "level": "L5",
+      "skills": ["Python", "APIs", "PostgreSQL", "distributed systems"],
+      "typical_projects": ["dev-portal", "data-pipeline-reliability"]
+    },
+    {
+      "id": "profile-finops",
+      "title": "FinOps Engineer",
+      "level": "L4",
+      "skills": ["cost modeling", "Kubernetes", "dashboards"],
+      "typical_projects": ["cost-optimization"]
+    }
+  ],
+  "synthetic_resumes": [
+    {
+      "id": "resume-maya",
+      "name": "Maya Chen (synthetic)",
+      "years_experience": 7,
+      "highlights": ["EKS migrations", "Python services", "Terraform modules", "mentored 3 engineers"],
+      "gaps_vs_strict_jd": ["No CS degree", "Limited Go experience"]
+    },
+    {
+      "id": "resume-jordan",
+      "name": "Jordan Lee (synthetic)",
+      "years_experience": 5,
+      "highlights": ["Internal dev portals", "CI/CD pipelines", "Python automation"],
+      "gaps_vs_strict_jd": ["Fewer years than 7+ competitor reqs"]
+    },
+    {
+      "id": "resume-alex",
+      "name": "Alex Rivera (synthetic)",
+      "years_experience": 9,
+      "highlights": ["SRE on-call lead", "SLO programs", "multi-cloud"],
+      "gaps_vs_strict_jd": ["Prefers remote; limited on-site availability"]
+    },
+    {
+      "id": "resume-sam",
+      "name": "Sam Okonkwo (synthetic)",
+      "years_experience": 4,
+      "highlights": ["FinOps dashboards", "K8s autoscaling", "Python scripting"],
+      "gaps_vs_strict_jd": ["Below senior title years at some competitors"]
+    }
+  ]
+}
