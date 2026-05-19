@@ -1,10 +1,13 @@
 import type { ChatMessage, ChatResponse } from './types'
 
+/** Empty in production (same-origin via Vercel rewrites); set VITE_API_URL for split deploys. */
+const API_BASE = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, '') ?? ''
+
 export async function sendChat(
   messages: ChatMessage[],
   currentDraft: string | null,
 ): Promise<ChatResponse> {
-  const response = await fetch('/api/chat', {
+  const response = await fetch(`${API_BASE}/api/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

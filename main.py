@@ -102,11 +102,25 @@ except ModuleNotFoundError as exc:
     # #endregion
     raise
 
+def _cors_origins() -> list[str]:
+    origins = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
+    vercel_url = os.getenv("VERCEL_URL")
+    if vercel_url:
+        origins.append(f"https://{vercel_url}")
+    extra = os.getenv("CORS_ORIGINS", "")
+    origins.extend(s.strip() for s in extra.split(",") if s.strip())
+    return origins
+
+
 app = FastAPI(title="JobShock API", version="0.2.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=_cors_origins(),
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
